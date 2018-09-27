@@ -1,27 +1,25 @@
-def standaardprijs():
-    afstand = float(input('Enter the distance in KM to your destination: '))
-    prijs = afstand * 0.80
-    if afstand >= 50:
-        prijs = 15 + (afstand*0.60)
-        print(prijs)
-    elif afstand < int(0):
-        prijs = float(0.00)
-    print('The price of the journey is €',"%.2f" % round(prijs,2))
+def standaardprijs(afstandKM):
+    prijs = afstandKM * 0.80
+    if afstandKM >= 50:
+        prijs = 15 + (afstandKM - 50)*0.60
+    elif afstandKM < 0:
+        prijs = 0.00
+    return prijs
+
+def ritprijs(leeftijd, weekendrit, afstandKM):
+    prijs = standaardprijs(afstandKM)
+
+    if weekendrit and (leeftijd < 12 or leeftijd >= 65):
+        prijs = prijs / 100 * 65
+    elif weekendrit:
+        prijs = prijs / 100 * 60
+    elif leeftijd < 12 or leeftijd >= 65:
+        prijs = prijs / 100 * 70
+
+    print(prijs)
 
 
-def ritprijs():
-    standaardprijs()
-    leeftijd = int(input('Please enter your age: '))
-    if leeftijd < 12:
-
-    weekendrit = str(input('Are you traveling on a weekend? True/False'))
-    if weekendrit == 'True':
-        weekendrit = True
-
-
-
-
-ritprijs()
+ritprijs(14, True, 420)
 
 
 
