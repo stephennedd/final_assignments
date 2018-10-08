@@ -17,7 +17,6 @@ def ritprijs(leeftijd, weekendrit, afstandKM):
         prijs = prijs / 100 * 70
     return prijs
 
-
 def testwaardes():
     a = 'De weekend ritprijs op leeftijd van 11 en afstand van 1km: '
     b = 'De weekend ritprijs op leeftijd van 11 en afstand van 100km: '
