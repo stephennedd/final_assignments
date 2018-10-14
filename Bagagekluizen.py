@@ -55,7 +55,6 @@ def kluis_openen():
     bezet = 0
 
     if bezet < 12:
-        kluizen_read = open("kluizen.txt", "r")
         lines = open("kluizen.txt", "r")
 
         kluis_input = (input('Geef uw kluisnummer:'))
