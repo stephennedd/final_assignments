@@ -26,8 +26,8 @@ def inlezen_eindstation(stations, beginstation):
 def omproepen_reis(stations, beginstation, eindstation):
     station_lijst = stations[stations.index(beginstation) + 1:stations.index(eindstation)]
     aantalhaltes = stations.index(eindstation)-stations.index(beginstation)
-    print('Het beginstation', ' ', beginstation, ' ', 'is het', ' ', stations.index(beginstation), 'e station in het traject.', sep='')
-    print('Het eindstation', ' ', eindstation, ' ', 'is het', ' ', stations.index(eindstation), 'e station in het traject.', sep='')
+    print('Het beginstation', ' ', beginstation, ' ', 'is het', ' ', stations.index(beginstation) + 1, 'e station in het traject.', sep='')
+    print('Het eindstation', ' ', eindstation, ' ', 'is het', ' ', stations.index(eindstation) + 1, 'e station in het traject.', sep='')
     print('De afstand bedraagt', aantalhaltes, 'station(s).')
     print('De prijs van het kaartje is', aantalhaltes * 5, 'Euro(s)')
     print('')
